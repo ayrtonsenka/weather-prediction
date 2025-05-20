@@ -18,7 +18,7 @@ root.resizable(False, False)
 def getWeather():
     city = textfield.get()
     
-    geolocator = Nominatim(user_agent="cordadanilo@gmail.com")
+    geolocator = Nominatim(user_agent="your_mail@gmail.com")
     location = geolocator.geocode(city)
     obj = TimezoneFinder()
     
@@ -33,7 +33,7 @@ def getWeather():
     clock.config(text=current_time)
     
     
-    api = "https://api.openweathermap.org/data/3.0/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&appid=213efbe74ec334eb48298f3b96d69c28"
+    api = "https://api.openweathermap.org/data/3.0/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&appid=your_api_key"
     json_data = requests.get(api).json()
     temp = json_data['current']['temp']
     humidity = json_data['current']['humidity']
